@@ -8,6 +8,8 @@ TagManager:
   - workbench
   - slime
   - grass
+  - geneGun
+  - net
   layers:
   - Default
   - TransparentFX

@@ -20,4 +20,9 @@ public class Slot : MonoBehaviour
         itemNumber.text = thisItem.itemNumber.ToString();
         transform.localScale = new Vector3(1, 1, 1);
     }
+
+    public void set_eleGene()
+    {
+        playerUI.instance.set_elementGene(slotItem);
+    }
 }

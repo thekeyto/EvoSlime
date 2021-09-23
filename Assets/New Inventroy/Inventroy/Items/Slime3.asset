@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classic: slime
   ifFound: 1
-  itemNumber: 31
+  itemNumber: 95
   itemName: Slime3
   itemImage: {fileID: 21300000, guid: 9d69ae98725365b4b94189120dc1b40a, type: 3}
-  Genes: '10110000001111000000121100000013110000001511000000
-
-'
+  Genes: 01000000001010101010000000101010101
   description: 

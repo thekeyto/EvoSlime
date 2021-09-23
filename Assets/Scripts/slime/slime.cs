@@ -24,6 +24,7 @@ public class slime : MonoBehaviour
     private void Start()
     {
         if (slimeProperty == null) return;
+        geneDecryp();
         for(int i=0;i<slimeProperty.Genes.Length;i++)
         {
             if (slimeProperty.Genes[i] == '0')
@@ -39,21 +40,36 @@ public class slime : MonoBehaviour
         transform.localScale = temp;
     }
 
-    int geneBiToInt(int start,int length)
+    public static int geneBiToInt(int start,int length,int[] tempgene)
     {
         int temp = 0;
         for(int i=start;i<start+length;i++)
         {
-            temp = temp * 2 + gene[i];
+            temp = temp * 2 + tempgene[i];
         }
         return temp;
+    }
+
+    public static Color setColor(int color)
+    {
+        Color tempColor=new Color(0,0,0);
+        if (color == 0) return Color.red;
+        else if (color == 1) return Color.green;
+        else if (color == 2) return Color.blue;
+        return tempColor;
     }
 
     void geneDecryp()
     {
         figure = (gene[0] * 2 + gene[1] + 1) * 0.5f;
-        color = geneBiToInt(2,4);
-        element = geneBiToInt(6, 4);
+        color = geneBiToInt(2,4,gene);
+        element = geneBiToInt(6, 4,gene);
+        Color slimeColor=new Color(0,0,0);
 
+        gameObject.transform.localScale *= figure;
+
+        slimeColor = setColor(color);
+
+        gameObject.GetComponent<SpriteRenderer>().color = slimeColor;
     }
 }

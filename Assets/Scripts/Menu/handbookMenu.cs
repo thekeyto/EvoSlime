@@ -20,8 +20,21 @@ public class handbookMenu : MonoBehaviour
     public void updateMenu(Item handbookItem)
     {
         Debug.Log("update");
-        picture.sprite = handbookItem.itemImage;
-        name.text = handbookItem.itemName;
-        describe.text = handbookItem.description;
+        if (handbookItem.ifFound == true)
+        {
+            picture.sprite = handbookItem.itemImage;
+            name.text = handbookItem.itemName;
+            describe.text = handbookItem.description;
+        }
+        else
+        {
+            picture.sprite = handbookItem.itemImage;
+            picture.color = new Color(0, 0, 0);
+            describe.text = "还未得到该物品的信息";
+        }
+    }
+    public void exit()
+    {
+        instance.gameObject.SetActive(false);
     }
 }

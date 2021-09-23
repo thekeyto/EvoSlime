@@ -19,6 +19,7 @@ public class ItemOnWorld : MonoBehaviour
     }
     public void AddNewItem()
     {
+        thisItem.ifFound = true;
         if (!playerInventory.itemList.Contains(thisItem))
         {
             for (int i = 0; i < playerInventory.itemList.Count; i++)

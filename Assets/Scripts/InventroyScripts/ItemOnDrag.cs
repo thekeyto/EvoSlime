@@ -87,6 +87,26 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
                 return;
             }
 
+            if (eventData.pointerCurrentRaycast.gameObject.tag == "geneGun")
+            {
+                geneGun tempParent = eventData.pointerCurrentRaycast.gameObject.GetComponent<geneGun>();
+                eventData.pointerCurrentRaycast.gameObject.GetComponent<geneGun>().getItem(currentItem);
+                transform.SetParent(originalParent);
+                transform.position = originalParent.position;
+                InventoryManager.RefreshItem();
+                return;
+            }
+
+            if (eventData.pointerCurrentRaycast.gameObject.name == "GunImage")
+            {
+                geneGun tempParent = eventData.pointerCurrentRaycast.gameObject.transform.GetComponentInParent<geneGun>();
+                eventData.pointerCurrentRaycast.gameObject.transform.GetComponentInParent<geneGun>().getItem(currentItem);
+                transform.SetParent(originalParent);
+                transform.position = originalParent.position;
+                InventoryManager.RefreshItem();
+                return;
+            }
+
             transform.SetParent(originalParent);
                 transform.position = originalParent.position;
                 GetComponent<CanvasGroup>().blocksRaycasts = true;

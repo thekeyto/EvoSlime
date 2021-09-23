@@ -6,13 +6,23 @@ public class player : MonoBehaviour
 {
     public float netLit;
     public float speed;
+    public float bulletSpeed;
     public GameObject playerBag;
     public GameObject net;
+    public GameObject geneGun;
 
     int directh = 1;
     private Rigidbody2D rigidbody;
     private SpriteRenderer playerSprite;
     public Animator playerAni;
+    public static player instance;
+
+    private void Awake()
+    {
+        if (instance != null) Destroy(instance);
+        instance = this;
+    }
+
     void Start()
     {
         playerAni = GetComponent<Animator>();
@@ -56,18 +66,24 @@ public class player : MonoBehaviour
             InventoryManager.RefreshItem();
         }
     }
-    float pow2(float x)
+    static float pow2(float x)
     {
         return x * x;
     }
 
-    float distance(Vector3 a, Vector3 b)
+    public static float distance(Vector3 a, Vector3 b)
     {
         return Mathf.Sqrt(pow2(a.x - b.x) + pow2(a.y - b.y) + pow2(a.z - b.z));
     }
+
+    Vector3 normalize(Vector3 a,Vector3 b)
+    {
+        return (a - b) / distance(a, b);
+    }
+
     void shoot()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0)&&playerUI.instance.if_UIOpen==false)
         {
             playerAni.SetBool("attack", true);
             var screenPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -75,15 +91,30 @@ public class player : MonoBehaviour
             mousePositionOnScreen.z = screenPosition.z;
             var mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePositionOnScreen);
             mousePositionInWorld.z = 0;
-            GameObject tempslime = Instantiate(net,transform.parent) as GameObject;
+
+            float m_fireAngle = Vector2.Angle(mousePositionInWorld - this.transform.position, Vector2.up);
+            if(mousePositionInWorld.x>this.transform.position.x) m_fireAngle = -m_fireAngle;
+            GameObject tempnet = Instantiate(net,transform.position, Quaternion.identity) as GameObject;
+            tempnet.GetComponent<Rigidbody2D>().velocity= (mousePositionInWorld - transform.localPosition).normalized * bulletSpeed;
+            tempnet.transform.eulerAngles = new Vector3(0, 0, m_fireAngle);
             Debug.Log(mousePositionInWorld);
+            if (geneGun.GetComponent<geneGun>().gel != null)
+            {
+                tempnet.GetComponent<net>().gelgene = geneGun.GetComponent<geneGun>().gel.Genes;
+                tempnet.GetComponent<net>().ability = elementManager.elementRect(geneGun.GetComponent<geneGun>().gel.Genes);
+                tempnet.GetComponent<net>().netColor = geneGun.GetComponent<geneGun>().gelColor;
+                geneGun.GetComponent<geneGun>().gel.itemNumber--;
+                if (geneGun.GetComponent<geneGun>().gel.itemNumber == 0) geneGun.GetComponent<geneGun>().gel = null;
+            }
+            float step = bulletSpeed * Time.deltaTime;
+            
             if (distance(mousePositionInWorld, transform.position) <= netLit)
             {
-                tempslime.transform.position = mousePositionInWorld;
+                tempnet.GetComponent<net>().destination = mousePositionInWorld;
             }
             else
             {
-                tempslime.transform.position = (mousePositionInWorld - transform.position) / distance(mousePositionInWorld, transform.position) * netLit;
+                tempnet.GetComponent<net>().destination=transform.localPosition+(mousePositionInWorld - transform.localPosition).normalized * netLit;
             }
         }
     }

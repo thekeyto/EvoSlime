@@ -47,6 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>4.11.3.0</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2019.4.23f1c1</UnityVersion>
@@ -108,15 +109,23 @@
     <Compile Include="Assets\Scripts\RotatingCamera.cs" />
     <Compile Include="Assets\Scripts\Workbench.cs" />
     <Compile Include="Assets\Scripts\bagCanvas.cs" />
+    <Compile Include="Assets\Scripts\box.cs" />
     <Compile Include="Assets\Scripts\bush.cs" />
     <Compile Include="Assets\Scripts\castShadow.cs" />
     <Compile Include="Assets\Scripts\commandControl.cs" />
+    <Compile Include="Assets\Scripts\compose.cs" />
+    <Compile Include="Assets\Scripts\elementManager.cs" />
     <Compile Include="Assets\Scripts\followPlayer.cs" />
+    <Compile Include="Assets\Scripts\geneGun.cs" />
+    <Compile Include="Assets\Scripts\mudOrSoil.cs" />
     <Compile Include="Assets\Scripts\net.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
+    <Compile Include="Assets\Scripts\playerUI.cs" />
     <Compile Include="Assets\Scripts\pool\GrassPool.cs" />
     <Compile Include="Assets\Scripts\pool\slimePool.cs" />
+    <Compile Include="Assets\Scripts\pressForLongTime.cs" />
     <Compile Include="Assets\Scripts\receiveShadow.cs" />
+    <Compile Include="Assets\Scripts\rightClick.cs" />
     <Compile Include="Assets\Scripts\slime\SlimeAction.cs" />
     <Compile Include="Assets\Scripts\slime\SlimeCrAction.cs" />
     <Compile Include="Assets\Scripts\slime\slime.cs" />
