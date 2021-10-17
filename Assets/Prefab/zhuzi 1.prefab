@@ -166,4 +166,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
   tile: {fileID: 11400000, guid: 18242cfcde3a82f4ba339a6cd029af43, type: 2}
+  changePoint: {fileID: 0}
   grid: {fileID: 0}
