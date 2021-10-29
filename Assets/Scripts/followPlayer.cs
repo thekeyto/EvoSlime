@@ -10,6 +10,9 @@ public class followPlayer : MonoBehaviour
     public Vector3 offset;
     private Vector3 targetPos;
 
+    public Transform rightTop;
+    public Transform leftBottom;
+
     // Use this for initialization
     void Start()
     {
@@ -17,6 +20,21 @@ public class followPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    float checkx()
+    {
+        if (target.transform.position.x-3 < leftBottom.position.x) return leftBottom.position.x+3;
+        if (target.transform.position.x+3 < leftBottom.position.x) return rightTop.position.x-3;
+        return target.transform.position.x;
+    }
+
+    float checky()
+    {
+        if (target.transform.position.y - 3 < leftBottom.position.y) return leftBottom.position.y + 3;
+        if (target.transform.position.y + 3 < leftBottom.position.y) return rightTop.position.y - 3;
+        return target.transform.position.y;
+    }
+
     void FixedUpdate()
     {
         if (target)
@@ -24,7 +42,7 @@ public class followPlayer : MonoBehaviour
             Vector3 posNoZ = transform.position;
             posNoZ.z = target.transform.position.z;
 
-            Vector3 targetDirection = (target.transform.position - posNoZ);
+            Vector3 targetDirection = (new Vector3(checkx(),checky(),0) - posNoZ);
 
             interpVelocity = targetDirection.magnitude * 5f;
 

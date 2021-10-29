@@ -410,7 +410,6 @@ MonoBehaviour:
   net: {fileID: 7339228618557316709, guid: 7fbd3fb49257e8640917e81579c37bb8, type: 3}
   geneGun: {fileID: 1177189838}
   playerAni: {fileID: 0}
-  tempTransform: {fileID: 62553873}
 --- !u!114 &62553867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca331938d608fd241912e1c16587f977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 805307490}
+  grid: {fileID: 0}
   tilemap: {fileID: 334882294}
   tiles:
   - {fileID: 11400000, guid: 3f4fdb0a0b9b0ae4cb027e70b58c46b6, type: 2}
@@ -2065,6 +2064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 334882291}
   - component: {fileID: 334882294}
+  - component: {fileID: 334882295}
   - component: {fileID: 334882293}
   - component: {fileID: 334882292}
   m_Layer: 8
@@ -2082,10 +2082,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334882290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.9952304, y: -1.1041636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 805307489}
+  m_Father: {fileID: 630886433}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &334882292
@@ -42277,6 +42277,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!156049354 &334882295
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334882290}
+  m_Enabled: 1
+  m_CellSize: {x: 0.25, y: 0.25, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
 --- !u!1 &350224899
 GameObject:
   m_ObjectHideFlags: 0
@@ -43594,7 +43606,7 @@ Transform:
   m_LocalPosition: {x: -2.9952304, y: 1.1041636, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
-  - {fileID: 805307489}
+  - {fileID: 334882291}
   - {fileID: 1960334793}
   - {fileID: 1512432764}
   m_Father: {fileID: 0}
@@ -43810,7 +43822,7 @@ PrefabInstance:
         type: 3}
       propertyPath: grid
       value: 
-      objectReference: {fileID: 805307490}
+      objectReference: {fileID: 334882295}
     - target: {fileID: 6635673899093130498, guid: 12f7b996f0ff39d4d888f51a4c69573c,
         type: 3}
       propertyPath: tilemap
@@ -80902,50 +80914,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &805307488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 805307489}
-  - component: {fileID: 805307490}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &805307489
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805307488}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.9952304, y: -1.1041636, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 334882291}
-  m_Father: {fileID: 630886433}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!156049354 &805307490
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 805307488}
-  m_Enabled: 1
-  m_CellSize: {x: 0.25, y: 0.25, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &875419835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5318864450499653733, guid: 519c7fe688fe78945b0a4c56828ea133,
@@ -89842,7 +89810,7 @@ PrefabInstance:
         type: 3}
       propertyPath: grid
       value: 
-      objectReference: {fileID: 805307490}
+      objectReference: {fileID: 334882295}
     - target: {fileID: 4660469623516629489, guid: 0d18850ec4f17414893860ad5618bcfe,
         type: 3}
       propertyPath: tilemap
@@ -90412,7 +90380,7 @@ PrefabInstance:
         type: 3}
       propertyPath: grid
       value: 
-      objectReference: {fileID: 805307490}
+      objectReference: {fileID: 334882295}
     - target: {fileID: 6635673899093130498, guid: 12f7b996f0ff39d4d888f51a4c69573c,
         type: 3}
       propertyPath: tilemap
