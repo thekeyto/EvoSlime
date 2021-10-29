@@ -83,7 +83,7 @@ public class SlimeCrAction : MonoBehaviour
             {
                 waitCrTime = 0;
                 Ranvec = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f), 0);
-                GrassPool.instance.insGrass(new Vector3(Ranvec.x, Ranvec.y, 0));
+                GrassPool.instance.insGrass(new Vector3(Ranvec.x, Ranvec.y, 0),GrassPool.instance.transform);
             }
         }
 

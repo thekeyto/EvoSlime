@@ -88,16 +88,23 @@ public class player : MonoBehaviour
             playerAni.SetBool("attack", true);
             var screenPosition = Camera.main.WorldToScreenPoint(transform.position);
             Vector3 mousePositionOnScreen = Input.mousePosition;
+            Debug.Log(screenPosition);
             mousePositionOnScreen.z = screenPosition.z;
+            Debug.Log(mousePositionOnScreen);
             var mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePositionOnScreen);
             mousePositionInWorld.z = 0;
+            Debug.Log(mousePositionInWorld);
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitt = new RaycastHit();
+            Physics.Raycast(ray, out hitt, 100);
+            if (hitt.transform != null) Debug.Log(hitt.transform);
 
             float m_fireAngle = Vector2.Angle(mousePositionInWorld - this.transform.position, Vector2.up);
             if(mousePositionInWorld.x>this.transform.position.x) m_fireAngle = -m_fireAngle;
             GameObject tempnet = Instantiate(net,transform.position, Quaternion.identity) as GameObject;
             tempnet.GetComponent<Rigidbody2D>().velocity= (mousePositionInWorld - transform.localPosition).normalized * bulletSpeed;
             tempnet.transform.eulerAngles = new Vector3(0, 0, m_fireAngle);
-            Debug.Log(mousePositionInWorld);
             if (geneGun.GetComponent<geneGun>().gel != null)
             {
                 tempnet.GetComponent<net>().gelgene = geneGun.GetComponent<geneGun>().gel.Genes;
@@ -105,6 +112,17 @@ public class player : MonoBehaviour
                 tempnet.GetComponent<net>().netColor = geneGun.GetComponent<geneGun>().gelColor;
                 geneGun.GetComponent<geneGun>().gel.itemNumber--;
                 if (geneGun.GetComponent<geneGun>().gel.itemNumber == 0) geneGun.GetComponent<geneGun>().gel = null;
+
+                if(tempnet.GetComponent<net>().ability==mudAndConcreate.typeEnum.concreteToMud.ToString())
+                {
+                    GetComponent<mudAndConcreate>().cellTransform.position = mousePositionInWorld;
+                    GetComponent<mudAndConcreate>().myTypeEnum = mudAndConcreate.typeEnum.concreteToMud;
+                }
+                if (tempnet.GetComponent<net>().ability == mudAndConcreate.typeEnum.mudToConcrete.ToString())
+                {
+                    GetComponent<mudAndConcreate>().cellTransform.position = mousePositionInWorld;
+                    GetComponent<mudAndConcreate>().myTypeEnum = mudAndConcreate.typeEnum.mudToConcrete;
+                }
             }
             float step = bulletSpeed * Time.deltaTime;
             

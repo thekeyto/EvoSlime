@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Facing : MonoBehaviour
 {
+    List<Transform> things = new List<Transform>();
     Transform[] childs;
     void Start()
     {
@@ -11,6 +12,18 @@ public class Facing : MonoBehaviour
         for(int i=0;i<transform.childCount;i++)
         {
             childs[i] = transform.GetChild(i);
+        }
+        for (int i = 0; i < childs.Length; i++)
+            if (childs[i].transform.childCount != 0 && childs[i].tag != "player")
+                for (int j = 0; j < childs[i].transform.childCount; j++)
+                {
+                    things.Add(childs[i].transform.GetChild(j));
+                }
+            else things.Add(childs[i].transform);
+        for (int i = 0; i < things.Count; i++)
+        {
+            things[i].localRotation = Camera.main.transform.rotation;
+            things[i].localPosition = new Vector3(things[i].localPosition.x,things[i].localPosition.y,0);
         }
     }
 
@@ -23,6 +36,15 @@ public class Facing : MonoBehaviour
             childs[i] = transform.GetChild(i);
         }
         for (int i = 0; i < childs.Length; i++)
-            childs[i].rotation = Camera.main.transform.rotation;
+            if (childs[i].transform.childCount != 0 && childs[i].tag != "player")
+                for (int j = 0; j < childs[i].transform.childCount; j++)
+                {
+                    things.Add(childs[i].transform.GetChild(j));
+                }
+            else things.Add(childs[i].transform);
+        for (int i = 0; i < things.Count; i++)
+        {
+            things[i].localRotation = Camera.main.transform.rotation;
+        }
     }
 }

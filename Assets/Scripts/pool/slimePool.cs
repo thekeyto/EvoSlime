@@ -39,6 +39,7 @@ public class slimePool : MonoBehaviour
             var temp = Instantiate(slime) as GameObject;
             temp.transform.position = position;
             instance.mySlimeActive.Add(temp);
+            temp.transform.SetParent(instance.transform);
             return temp;
         }
     }

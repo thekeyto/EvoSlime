@@ -16,11 +16,11 @@ public class elementManager : MonoBehaviour
         {
             int flag = 0;
             for (int i = 0; i < 25; i++) if (gene[i + 10] != soilToMud[i]) flag = 1;
-            if (flag == 0) return "soilToMud";
+            if (flag == 0) return mudAndConcreate.typeEnum.concreteToMud.ToString();
             flag = 0;
             for (int i = 0; i < 25; i++) if (gene[i + 10] != mudToSoil[i]) flag = 1;
-            if (flag == 0) return "mudToSoil";
+            if (flag == 0) return mudAndConcreate.typeEnum.mudToConcrete.ToString();
         }
-        return "null";
+        return mudAndConcreate.typeEnum.neither.ToString();
     }
 }
