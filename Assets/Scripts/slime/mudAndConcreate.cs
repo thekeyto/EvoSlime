@@ -34,10 +34,20 @@ public class mudAndConcreate : MonoBehaviour
         if (tempTile!=null)
         {
             int temp = getInt(tempTile.name);
-            if (myTypeEnum == typeEnum.mudToConcrete && temp >= 1 && temp <= 4)
-                tilemap.SetTile(cellPos, tiles[temp + 3]);
-            else if (myTypeEnum == typeEnum.concreteToMud && temp <= 9 && temp >= 5)
+            if (myTypeEnum == typeEnum.mudToConcrete)
+            {
+                if (temp >= 1 && temp <= 4)
+                    tilemap.SetTile(cellPos, tiles[temp + 3]);
+                if (temp == 17)
+                    tilemap.SetTile(cellPos, tiles[9]);
+            }
+            else if (myTypeEnum == typeEnum.concreteToMud)
+            { 
+                if( temp <= 9 && temp >= 5)
                 tilemap.SetTile(cellPos, tiles[getInt(tempTile.name) - 6]);
+                if(temp==18)
+                    tilemap.SetTile(cellPos, tiles[8]);
+            }
         }
     }
 }
