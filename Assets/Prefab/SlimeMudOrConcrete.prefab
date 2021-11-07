@@ -236,7 +236,7 @@ MonoBehaviour:
   grid: {fileID: 0}
   tilemap: {fileID: 0}
   tiles:
-  - {fileID: 11400000, guid: 3f4fdb0a0b9b0ae4cb027e70b58c46b6, type: 2}
+  - {fileID: 11400000, guid: 30844eec90dff1441a642f8d97dc21c9, type: 2}
   - {fileID: 11400000, guid: bd561be3603521b4fb3560c08f3d5209, type: 2}
   - {fileID: 11400000, guid: 18242cfcde3a82f4ba339a6cd029af43, type: 2}
   - {fileID: 11400000, guid: e69fc05612900d0418310852b39192fc, type: 2}

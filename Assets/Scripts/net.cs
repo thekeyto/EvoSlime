@@ -29,7 +29,7 @@ public class net : MonoBehaviour
     {
 
         netSprite.color = netColor;
-        if (distance(destination, transform.position) < 0.1)
+        if (distance(destination, transform.position) < 0.5)
         {
             GetComponent<CapsuleCollider2D>().enabled = true;
             this.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
