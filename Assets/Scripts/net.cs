@@ -54,13 +54,11 @@ public class net : MonoBehaviour
             if (distance(collision.transform.position, transform.position) <= lit1)
             {
                 if_catch = true;
-                Debug.Log(1);
                 collision.GetComponent<slime>().active = false;
                 Destroy(gameObject, 5.0f);
             }
             else if (distance(collision.transform.position, transform.position) <= lit2)
             {
-                Debug.Log(2);
                 collision.GetComponent<slime>().isHau = true;
             }
         }
