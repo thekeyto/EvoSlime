@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: tile_11
+  m_Name: wetMudtile_11
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1087402324501320590, guid: cf5fcc5045aaac947b0fe6bc6a82aa11,
+  m_Sprite: {fileID: 7713819393718715255, guid: cf5fcc5045aaac947b0fe6bc6a82aa11,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:

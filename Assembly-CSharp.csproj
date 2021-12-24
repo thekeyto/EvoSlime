@@ -86,7 +86,6 @@
     <Compile Include="Assets\Scripts\BTTreeFramework\Extends\Preconditions\CheckChance.cs" />
     <Compile Include="Assets\Scripts\BTTreeFramework\Extends\Preconditions\CheckKeyboradInput.cs" />
     <Compile Include="Assets\Scripts\BTTreeFramework\Extends\Preconditions\CheckVector3.cs" />
-    <Compile Include="Assets\Scripts\ChangeTile.cs" />
     <Compile Include="Assets\Scripts\CheckInSight.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\Scripts\DecisionAI.cs" />
@@ -115,11 +114,16 @@
     <Compile Include="Assets\Scripts\castShadow.cs" />
     <Compile Include="Assets\Scripts\commandControl.cs" />
     <Compile Include="Assets\Scripts\compose.cs" />
-    <Compile Include="Assets\Scripts\elementManager.cs" />
-    <Compile Include="Assets\Scripts\elementTileManager.cs" />
+    <Compile Include="Assets\Scripts\csv\csvController.cs" />
+    <Compile Include="Assets\Scripts\csv\csvInit.cs" />
+    <Compile Include="Assets\Scripts\elementReact\ChangeTile.cs" />
+    <Compile Include="Assets\Scripts\elementReact\elementManager.cs" />
+    <Compile Include="Assets\Scripts\elementReact\elementTileManager.cs" />
+    <Compile Include="Assets\Scripts\elementReact\mudAndConcreate.cs" />
+    <Compile Include="Assets\Scripts\elementReact\mudOrSoil.cs" />
+    <Compile Include="Assets\Scripts\elementReact\waterFlow.cs" />
     <Compile Include="Assets\Scripts\followPlayer.cs" />
     <Compile Include="Assets\Scripts\geneGun.cs" />
-    <Compile Include="Assets\Scripts\mudOrSoil.cs" />
     <Compile Include="Assets\Scripts\net.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\playerUI.cs" />
@@ -131,7 +135,6 @@
     <Compile Include="Assets\Scripts\rightClick.cs" />
     <Compile Include="Assets\Scripts\slime\SlimeAction.cs" />
     <Compile Include="Assets\Scripts\slime\SlimeCrAction.cs" />
-    <Compile Include="Assets\Scripts\slime\mudAndConcreate.cs" />
     <Compile Include="Assets\Scripts\slime\slime.cs" />
     <Compile Include="Assets\Scripts\sun.cs" />
     <Compile Include="Assets\Wizard - 2D Character\Demo\SimplePlayerController.cs" />

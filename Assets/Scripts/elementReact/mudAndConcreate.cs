@@ -43,12 +43,12 @@ public class mudAndConcreate : MonoBehaviour
                 Debug.Log("cc");
             }
             else
-            if (Regex.IsMatch(tempTile.name, "mud"))
+            if (Regex.IsMatch(tempTile.name, "wetMud"))
                 tilemap.SetTile(cellPos, elementTileManager.instance.concreteTiles[temp]);
         }
         else if (myTypeEnum == typeEnum.concreteToMud)
         {
-            if (Regex.IsMatch(tempTile.name, "mud"))
+            if (Regex.IsMatch(tempTile.name, "wetMud"))
                 tilemap.SetTile(cellPos, elementTileManager.instance.mudTiles[
                     temp == elementTileManager.instance.concreteTiles.Count-1 ? 0 : temp + 1]);
             else
@@ -56,7 +56,14 @@ public class mudAndConcreate : MonoBehaviour
                 tilemap.SetTile(cellPos, elementTileManager.instance.mudTiles[temp]);
         }
     }
-
+    public void mySetWaterTile(int xpos,int ypos,int id)
+    {
+        tilemap.SetTile(new Vector3Int(xpos, ypos, 0), elementTileManager.instance.waterConcreteTiles[id]);
+    }
+    public void mySetWetMudTile(int xpos, int ypos, int id)
+    {
+        tilemap.SetTile(new Vector3Int(xpos, ypos, 0), elementTileManager.instance.mudTiles[id]);
+    }
     // Update is called once per frame
     void Update()
     {

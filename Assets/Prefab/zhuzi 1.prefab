@@ -164,16 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca331938d608fd241912e1c16587f977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isplayer: 0
   grid: {fileID: 0}
   tilemap: {fileID: 0}
-  tiles:
-  - {fileID: 11400000, guid: 3f4fdb0a0b9b0ae4cb027e70b58c46b6, type: 2}
-  - {fileID: 11400000, guid: bd561be3603521b4fb3560c08f3d5209, type: 2}
-  - {fileID: 11400000, guid: 18242cfcde3a82f4ba339a6cd029af43, type: 2}
-  - {fileID: 11400000, guid: e69fc05612900d0418310852b39192fc, type: 2}
-  - {fileID: 11400000, guid: 5420bc638fd013043871465a8353b18a, type: 2}
-  - {fileID: 11400000, guid: a1c698c999b2bb84092a3d8a2b9b363a, type: 2}
-  - {fileID: 11400000, guid: 3327d4b75b2efa04b86ea663af2bd01e, type: 2}
-  - {fileID: 11400000, guid: 1c0c8c5702add564e8d5dbe329506c83, type: 2}
   cellTransform: {fileID: 5252809755789027481}
   myTypeEnum: 0
