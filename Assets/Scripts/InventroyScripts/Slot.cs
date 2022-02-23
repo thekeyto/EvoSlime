@@ -9,9 +9,12 @@ public class Slot : MonoBehaviour
     public Item slotItem;
     public Image slotImage;
     public Text itemNumber;
-
-    public void  setupslot(Item thisItem)
+    public GameObject grid;
+    public void  setupslot(Item thisItem,string tag)
     {
+        grid.tag = tag;
+        slotImage.tag = tag;
+        itemNumber.tag = tag;
         if (thisItem == null) return;
         //Debug.Log(thisItem.name);
         //Debug.Log(thisItem.itemNumber);

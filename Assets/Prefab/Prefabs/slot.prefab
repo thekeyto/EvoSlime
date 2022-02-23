@@ -182,6 +182,7 @@ MonoBehaviour:
   slotItem: {fileID: 0}
   slotImage: {fileID: 4545560269254351993}
   itemNumber: {fileID: 4545560269901254248}
+  grid: {fileID: 3700449524068881549}
 --- !u!114 &901420436804208518
 MonoBehaviour:
   m_ObjectHideFlags: 0

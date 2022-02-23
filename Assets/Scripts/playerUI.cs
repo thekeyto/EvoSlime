@@ -38,7 +38,10 @@ public class playerUI : MonoBehaviour
         if_UIOpen = false;
         elements = new List<GameObject>();
         for (int i = 0; i < elementSlots.transform.childCount; i++)
+        {
             elements.Add(elementSlots.transform.GetChild(i).gameObject);
+            elements[i].transform.position=new Vector3 (0,0,0);
+        }
     }
 
     void refresh()
@@ -65,6 +68,7 @@ public class playerUI : MonoBehaviour
 
         if (playerbag.active == false)
         {
+            playerbag.transform.GetChild(0).gameObject.SetActive(true);
             if_UIOpen = true;
             geneGun.SetActive(true);
             playerbag.SetActive(true);
@@ -75,6 +79,7 @@ public class playerUI : MonoBehaviour
             workBench.SetActive(false);
             geneGun.SetActive(false);
             playerbag.SetActive(false);
+            playerbag.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 

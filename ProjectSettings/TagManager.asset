@@ -10,6 +10,8 @@ TagManager:
   - grass
   - geneGun
   - net
+  - bag
+  - belt
   layers:
   - Default
   - TransparentFX

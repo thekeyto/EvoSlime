@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\InventroyScripts\ItemOnWorld.cs" />
     <Compile Include="Assets\Scripts\InventroyScripts\MoveBag.cs" />
     <Compile Include="Assets\Scripts\InventroyScripts\Slot.cs" />
+    <Compile Include="Assets\Scripts\InventroyScripts\beltManager.cs" />
     <Compile Include="Assets\Scripts\InventroyScripts\handbookInventory.cs" />
     <Compile Include="Assets\Scripts\InventroyScripts\handbookItem.cs" />
     <Compile Include="Assets\Scripts\Menu\handbookMenu.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Assets\Scripts\pool\GrassPool.cs" />
     <Compile Include="Assets\Scripts\pool\slimePool.cs" />
     <Compile Include="Assets\Scripts\pressForLongTime.cs" />
+    <Compile Include="Assets\Scripts\puzzle.cs" />
     <Compile Include="Assets\Scripts\puzzleController.cs" />
     <Compile Include="Assets\Scripts\receiveShadow.cs" />
     <Compile Include="Assets\Scripts\rightClick.cs" />

@@ -12,6 +12,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
     public Item currentItem;
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log(gameObject.tag);
         originalParent = transform.parent;
         currentItem = originalParent.GetComponent<Slot>().slotItem;
         currentItemID = originalParent.GetComponent<Slot>().slotID;
@@ -24,18 +25,25 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
     {
         transform.position = eventData.position;
         if(eventData.pointerCurrentRaycast.gameObject!=null)
-        Debug.Log(eventData.pointerCurrentRaycast.gameObject.name);
+        Debug.Log(eventData.pointerCurrentRaycast.gameObject.name+ eventData.pointerCurrentRaycast.gameObject.tag);
+    }
+
+    void refreshItem()
+    {
+        InventoryManager.RefreshItem();
+        beltManager.RefreshItem();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         if (eventData.pointerPressRaycast.gameObject != null)
         { 
-            if(eventData.pointerCurrentRaycast.gameObject==null)
+            if(eventData.pointerCurrentRaycast.gameObject==null|| eventData.pointerCurrentRaycast.gameObject.tag!=gameObject.tag)
             {
                 transform.SetParent(originalParent);
                 transform.position = originalParent.position;
                 GetComponent<CanvasGroup>().blocksRaycasts = true;
+                refreshItem();
                 return;
             }
             if (eventData.pointerCurrentRaycast.gameObject.name == "ItemImage")
@@ -50,6 +58,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
                 eventData.pointerCurrentRaycast.gameObject.transform.parent.position = originalParent.position;
                 eventData.pointerCurrentRaycast.gameObject.transform.parent.SetParent(originalParent);
                 GetComponent<CanvasGroup>().blocksRaycasts = true;
+                refreshItem();
                 return;
             }
             if (eventData.pointerCurrentRaycast.gameObject.name == "slot(Clone)")
@@ -60,6 +69,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
                 mybag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = mybag.itemList[currentItemID];
                 if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().slotID != currentItemID)
                     mybag.itemList[currentItemID] = null;
+                refreshItem();
                 return;
             }
 
@@ -71,7 +81,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
                 transform.SetParent(originalParent);
                 transform.position = originalParent.position;
                 currentItem.itemNumber--;
-                InventoryManager.RefreshItem();
+                refreshItem();
                 return;
             }
 
@@ -83,7 +93,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
                 transform.SetParent(originalParent);
                 transform.position = originalParent.position;
                 currentItem.itemNumber--;
-                InventoryManager.RefreshItem();
+                refreshItem();
                 return;
             }
 
@@ -93,7 +103,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
                 eventData.pointerCurrentRaycast.gameObject.GetComponent<geneGun>().getItem(currentItem);
                 transform.SetParent(originalParent);
                 transform.position = originalParent.position;
-                InventoryManager.RefreshItem();
+                refreshItem();
                 return;
             }
 
@@ -103,7 +113,7 @@ public class ItemOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragH
                 eventData.pointerCurrentRaycast.gameObject.transform.GetComponentInParent<geneGun>().getItem(currentItem);
                 transform.SetParent(originalParent);
                 transform.position = originalParent.position;
-                InventoryManager.RefreshItem();
+                refreshItem();
                 return;
             }
 
