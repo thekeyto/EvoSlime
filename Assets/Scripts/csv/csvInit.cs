@@ -14,6 +14,15 @@ public class csvInit : MonoBehaviour
         csv=csvController.GetInstance();
         refresh();
     }
+    void saveItem(Item item)
+    {
+        AssetDatabase.CreateAsset(item, @"Assets/New Inventroy/Inventroy/Items/" + item.itemName + ".asset");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        AssetDatabase.CreateAsset(item.itemImage, @"Assets/Sprites/"+item.itemName+"_img.asset");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
     void refresh()
     {
         csv.loadFile(Application.dataPath + "//Resources", "slime.csv");
@@ -24,11 +33,14 @@ public class csvInit : MonoBehaviour
             newItem.itemNumber = csv.getInt(i, 1);
             newItem.Genes = csv.getString(i, 2);
             Debug.Log(newItem.name);
+            newItem.itemName = newItem.name;
             WWW www = new WWW(Application.dataPath + "//Resources//"+csv.getString(i, 3));
             newItem.itemImage=Sprite.Create(www.texture, new Rect(0, 0, www.texture.width, www.texture.height), new Vector2(0.5f, 0.5f));
             playerbag.itemList.Add(newItem);
+            saveItem(newItem);
             Debug.Log("initSucess");
         }
+        csv.deleteFile(Application.dataPath + "//Resources", "slime.csv");
        /* AssetDatabase.CreateAsset(playerbag, "Assets//slime.asset");
 
         BuildPipeline.BuildAssetBundle(null, new[]

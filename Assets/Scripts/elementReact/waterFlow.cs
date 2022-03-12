@@ -44,8 +44,8 @@ public class waterFlow : MonoBehaviour
         int id = getInt(tempTile.name);
         if(flag==true)
         {
-            Debug.Log(xpos.ToString() + "," + ypos.ToString());
-            Debug.Log(Regex.IsMatch(tempTile.name, "concrete").ToString() + id.ToString());
+            //Debug.Log(xpos.ToString() + "," + ypos.ToString());
+            //Debug.Log(Regex.IsMatch(tempTile.name, "concrete").ToString() + id.ToString());
             if(Regex.IsMatch(tempTile.name, "concrete")&&id<4)
             GetComponent<mudAndConcreate>().mySetWaterTile(xpos, ypos,id);
             if(Regex.IsMatch(tempTile.name, "dry"))
@@ -60,7 +60,7 @@ public class waterFlow : MonoBehaviour
             if (id == 3 || id == 1|| id==0) 
             {
                 dfs(xpos - 1, ypos, true);
-                Debug.Log(xpos.ToString() + "," + ypos.ToString());
+                //Debug.Log(xpos.ToString() + "," + ypos.ToString());
                 dfs(xpos + 1, ypos, true);
             }
             if (id == 2 || id == 3|| id==0)

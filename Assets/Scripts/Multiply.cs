@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 public class Multiply : MonoBehaviour
 {
     Item parent1;
@@ -169,7 +169,10 @@ public class Multiply : MonoBehaviour
                 child.Genes = tempchild;
                 child.itemNumber = 1;
                 child.itemImage = parent1.itemImage;
-                if(child!=null)
+                AssetDatabase.CreateAsset(child, @"Assets/New Inventroy/Inventroy/Items/" + child.itemName + ".asset");
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+                if (child!=null)
                 playerbag.itemList.Add(child);
             }
 
