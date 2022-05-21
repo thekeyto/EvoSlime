@@ -40,6 +40,7 @@ public class beltManager : MonoBehaviour
     public static void RefreshItem()
     {
         Debug.Log("beltchange");
+        if (instance == null) return;
         for (int i = 0; i < instance.slotGrid.transform.childCount; i++)
         {
             if (instance.slotGrid.transform.childCount == 0)

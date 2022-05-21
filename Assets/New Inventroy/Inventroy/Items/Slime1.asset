@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5590449c302c3048b0543d55807af03, type: 3}
   m_Name: Slime1
   m_EditorClassIdentifier: 
-  classic: slime
+  myClassic: 1
   ifFound: 1
   itemNumber: 5
   itemName: Slime1

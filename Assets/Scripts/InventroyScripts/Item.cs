@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu (fileName ="New Item",menuName ="Inventory/New Item")]
 public class Item : ScriptableObject
 {
-    public string classic;
+    public enum classic { thing,slime,star,gel};
+    public classic myClassic;
     public bool ifFound;
     public int itemNumber;
     public string itemName;

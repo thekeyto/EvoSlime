@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5590449c302c3048b0543d55807af03, type: 3}
   m_Name: Slime4
   m_EditorClassIdentifier: 
+  myClassic: 1
+  ifFound: 0
   itemNumber: 5
   itemName: Slime4
   itemImage: {fileID: 21300000, guid: 071c2f3c390094fbe96e77d4670007d0, type: 3}
   Genes: 
+  description: 

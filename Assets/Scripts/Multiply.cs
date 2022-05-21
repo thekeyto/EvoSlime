@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 public class Multiply : MonoBehaviour
 {
     Item parent1;
     Item parent2;
+    public Text desTex;
     public Inventory playerbag;
 
     public Workbench workBenchL;
@@ -151,6 +153,7 @@ public class Multiply : MonoBehaviour
         {
             parent1 = workBenchL.parent;
             parent2 = workBenchR.parent;
+            desTex.text = parent1.itemName + "和" + parent2.itemName + "正在开始合成\n";
             string tempchild = Mutiply(parent1.Genes, parent2.Genes);
             bool flag = false;
             for (int i = 0; i < playerbag.itemList.Count; i++)
@@ -169,6 +172,8 @@ public class Multiply : MonoBehaviour
                 child.Genes = tempchild;
                 child.itemNumber = 1;
                 child.itemImage = parent1.itemImage;
+                child.myClassic = Item.classic.slime;
+                desTex.text += "生成成功，子代dna为" + child.Genes;
                 AssetDatabase.CreateAsset(child, @"Assets/New Inventroy/Inventroy/Items/" + child.itemName + ".asset");
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();

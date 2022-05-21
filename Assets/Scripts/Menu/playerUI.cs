@@ -17,6 +17,7 @@ public class playerUI : MonoBehaviour
     public GameObject geneGun;
     public GameObject elementWayUI;
     public GameObject handbook;
+    public GameObject researchCanvas;
     public Item slimeGene;
     public static playerUI instance;
 
@@ -83,6 +84,12 @@ public class playerUI : MonoBehaviour
         }
     }
 
+    public void researchUI()
+    {
+        if (researchCanvas.active == false) researchCanvas.SetActive(true);
+        
+    }
+
     public void workBenchUI()
     {
         if (playerbag.active == false) playerbag.SetActive(true);
@@ -119,7 +126,7 @@ public class playerUI : MonoBehaviour
 
     public void elementWay()
     {
-        if ((slimeGene.classic == "gel" || slimeGene.classic == "slime") && elementWayUI.active == false)
+        if ((slimeGene.myClassic == Item.classic.gel || slimeGene.myClassic == Item.classic.slime) && elementWayUI.active == false)
         {
             elementWayUI.SetActive(true);
             for (int i = 10; i < 35; i++)

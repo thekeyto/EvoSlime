@@ -6,7 +6,7 @@ public class PullDownList : MonoBehaviour
 {
     private List<GameObject> itemPanelList;
     public GameObject itemPanel;
-    public Inventory handbook;
+    public Inventory playerBag;
 
     private void Awake()
     {
@@ -37,19 +37,19 @@ public class PullDownList : MonoBehaviour
 
     void refresh()
     {
-        for (int i = 0; i < handbook.itemList.Count; i++)
+        for (int i = 0; i < playerBag.itemList.Count; i++)
         {
-            Item tempitem = handbook.itemList[i];
+            Item tempitem = playerBag.itemList[i];
             if (tempitem == null) continue;
-            if (handbook.itemList[i].classic == "slime")
+            if (tempitem.myClassic == Item.classic.slime)
             {
                 setNewItem(tempitem.itemName, 2,tempitem);
             }
-            else if (tempitem.classic == "star")
+            else if (tempitem.myClassic == Item.classic.star)
             {
                 setNewItem(tempitem.itemName, 1,tempitem);
             }
-            else if(tempitem.classic=="thing")
+            else if(tempitem.myClassic==Item.classic.thing)
             {
                 setNewItem(tempitem.itemName, 3,tempitem);
             }

@@ -66,11 +66,6 @@
   <ItemGroup>
     <Compile Include="Assets\FreePixelMob\Mobs.cs" />
     <Compile Include="Assets\FreePixelMob\StateRandom.cs" />
-    <Compile Include="Assets\PullDownList\script\ItemBean.cs" />
-    <Compile Include="Assets\PullDownList\script\ItemBeanbase.cs" />
-    <Compile Include="Assets\PullDownList\script\ItemPanel.cs" />
-    <Compile Include="Assets\PullDownList\script\ItemPanelBase.cs" />
-    <Compile Include="Assets\PullDownList\script\PullDownList.cs" />
     <Compile Include="Assets\Scripts\BTTreeFramework\Core\BTAction.cs" />
     <Compile Include="Assets\Scripts\BTTreeFramework\Core\BTConfiguration.cs" />
     <Compile Include="Assets\Scripts\BTTreeFramework\Core\BTNode.cs" />
@@ -104,10 +99,21 @@
     <Compile Include="Assets\Scripts\InventroyScripts\beltManager.cs" />
     <Compile Include="Assets\Scripts\InventroyScripts\handbookInventory.cs" />
     <Compile Include="Assets\Scripts\InventroyScripts\handbookItem.cs" />
+    <Compile Include="Assets\Scripts\InventroyScripts\researchSlot.cs" />
     <Compile Include="Assets\Scripts\Menu\handbookMenu.cs" />
+    <Compile Include="Assets\Scripts\Menu\playerUI.cs" />
     <Compile Include="Assets\Scripts\Multiply.cs" />
     <Compile Include="Assets\Scripts\PlayAnimation.cs" />
+    <Compile Include="Assets\Scripts\PullDownList\script\ItemBean.cs" />
+    <Compile Include="Assets\Scripts\PullDownList\script\ItemBeanbase.cs" />
+    <Compile Include="Assets\Scripts\PullDownList\script\ItemPanel.cs" />
+    <Compile Include="Assets\Scripts\PullDownList\script\ItemPanelBase.cs" />
+    <Compile Include="Assets\Scripts\PullDownList\script\PullDownList.cs" />
+    <Compile Include="Assets\Scripts\PullDownList\script\workbenchPullDownList.cs" />
+    <Compile Include="Assets\Scripts\ResearchInventoryManager.cs" />
     <Compile Include="Assets\Scripts\RotatingCamera.cs" />
+    <Compile Include="Assets\Scripts\UI\exploreUI.cs" />
+    <Compile Include="Assets\Scripts\UI\researchUI.cs" />
     <Compile Include="Assets\Scripts\Workbench.cs" />
     <Compile Include="Assets\Scripts\bagCanvas.cs" />
     <Compile Include="Assets\Scripts\box.cs" />
@@ -125,9 +131,9 @@
     <Compile Include="Assets\Scripts\elementReact\waterFlow.cs" />
     <Compile Include="Assets\Scripts\followPlayer.cs" />
     <Compile Include="Assets\Scripts\geneGun.cs" />
+    <Compile Include="Assets\Scripts\mainMenuUI.cs" />
     <Compile Include="Assets\Scripts\net.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
-    <Compile Include="Assets\Scripts\playerUI.cs" />
     <Compile Include="Assets\Scripts\pool\GrassPool.cs" />
     <Compile Include="Assets\Scripts\pool\slimePool.cs" />
     <Compile Include="Assets\Scripts\pressForLongTime.cs" />

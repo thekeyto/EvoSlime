@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5590449c302c3048b0543d55807af03, type: 3}
   m_Name: slimGel
   m_EditorClassIdentifier: 
-  classic: thing
+  myClassic: 3
   ifFound: 0
   itemNumber: 0
   itemName: "\u751F\u4EA7\u8005\u53F2\u83B1\u59C6\u51DD\u80F6"
