@@ -18,10 +18,10 @@ public class InventoryManager : MonoBehaviour
         if (instance != null)
             Destroy(this);
         instance = this;
+        RefreshItem();
     }
     private void OnEnable()
     {
-        RefreshItem();
         //instance.itemInformation.text = "";
     }
     public static void UpdateItemInfo(string itemDicripotion)

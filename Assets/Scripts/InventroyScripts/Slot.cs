@@ -16,6 +16,7 @@ public class Slot : MonoBehaviour
     {
         grid.tag = tag;
         slotImage.tag = tag;
+        if(itemNumber!=null)
         itemNumber.tag = tag;
         if (thisItem == null) return;
         //Debug.Log(thisItem.name);
@@ -42,7 +43,7 @@ public class Slot : MonoBehaviour
 
     public void setElementWay()
     {
-        if (mainMenuUI.instance != null)
+        if (mainMenuUI.instance != null&&slotItem.myClassic!=Item.classic.thing)
         {
             mainMenuUI.instance.set_elementGene(slotItem);
             mainMenuUI.instance.elementWay();
